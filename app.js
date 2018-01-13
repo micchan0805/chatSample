@@ -2,7 +2,7 @@
 var fs = require("fs");
 var server = require("http").createServer(function(req, res) {
      res.writeHead(200, {"Content-Type":"text/html"});
-     var output = fs.readFileSync("./index.html", "utf-8");
+     var output = fs.readFileSync("./chat.html", "utf-8");
      res.end(output);
 }).listen(3000);
 var io = require("socket.io").listen(server);
@@ -35,3 +35,10 @@ io.sockets.on("connection", function (socket) {
     }
   });
 });
+
+// 通常のポート番号でのサーバを立てる
+var server = require("http").createServer(function(req, res) {
+     res.writeHead(200, {"Content-Type":"text/html"});
+     var output = fs.readFileSync("./chat.html", "utf-8");
+     res.end(output);
+}).listen(80);
