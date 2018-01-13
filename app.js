@@ -37,8 +37,8 @@ io.sockets.on("connection", function (socket) {
 });
 
 // 通常のポート番号でのサーバを立てる
-var default_server = require("http").createServer(function(req, res) {
-     res.writeHead(200, {"Content-Type":"text/html"});
-     var output = fs.readFileSync("./index.html", "utf-8");
-     res.end(output);
-}).listen(80);
+// var default_server = require("http").createServer(function(req, res) {
+//      res.writeHead(200, {"Content-Type":"text/html"});
+//      var output = fs.readFileSync("./index.html", "utf-8");
+//      res.end(output);
+// }).listen(80);
